@@ -37,6 +37,21 @@ class Catalogue {
     } )
     return matches;
   }
+
+
+  checkReorder() { 
+    let reorders = {
+      type: "Reorder",
+      productId: []
+    };
+
+    for( let i = 0; i < this.products.length; i++){
+      if(this.products[i].quantityInStock < this.products[i].reorderLevel)
+        reorders.productId.push(this.products[i].id);
+    }
+
+    return reorders;
+  }
 }
 module.exports = Catalogue;
 

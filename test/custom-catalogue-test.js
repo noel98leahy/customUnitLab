@@ -3,11 +3,13 @@ const Product = require("../src/product");
 // Setup
 let cat = new Catalogue("Test Catalogue");
 const p123 = new Product("A123", "Product 1", 100, 10, 10.0);
-const p124 = new Product("A124", "Widget 1", 100, 10, 10.0);
+const p124 = new Product("A124", "Widget 1", 4, 10, 10.0);
 const p125 = new Product("A125", "A Product 2", 100, 10, 10.0);
 const p126 = new Product("A126", "A Widget 2", 100, 10, 10.0);
 const p127 = new Product("A127", "Bracket 1", 100, 10, 10.0)
 const p128 = new Product("A128", "Another Product 3", 100, 10, 10.0);
+const p129 = new Product("A129", "Another Product 3", 9, 10, 10.0);
+
 let response
 
 console.log('Test addProduct')
@@ -88,7 +90,26 @@ if (response === true)
 else
   console.log('\tFailed')
 
+//================================
 
+cat = new Catalogue("Test Catalogue");
+console.log('\tReoder Product test');
+
+cat.addProduct(p123);
+cat.addProduct(p124);
+cat.addProduct(p125);
+cat.addProduct(p126);
+cat.addProduct(p127);
+cat.addProduct(p128);
+cat.addProduct(p129);
+
+console.log('\tIf any product needs reordering, their ids will be listed here. The test has passed')
+
+console.log('\tIf nothing needs reodering, nothing will be shown but the test passed.')
+
+response = cat.checkReorder();
+
+console.log(cat.checkReorder())
 
 
 
