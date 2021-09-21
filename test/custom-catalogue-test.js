@@ -66,3 +66,34 @@ if (matches.length === 0)
   console.log('\tPassed')
 else
   console.log('\tFailed')
+
+//================================
+
+cat = new Catalogue("Test Catalogue");
+console.log('Test removeProductById')
+
+cat.addProduct(p123);
+cat.addProduct(p124);
+cat.addProduct(p125);
+cat.addProduct(p126);
+cat.addProduct(p127);
+cat.addProduct(p128);
+
+console.log("\tWhen we remove a product, then it will return true")
+
+response = cat.removeProductById('A124');
+
+if (response === true)
+  console.log("\tPassed")
+else
+  console.log('\tFailed')
+
+
+
+
+
+
+
+
+
+  

@@ -20,6 +20,16 @@ class Catalogue {
     return false;
   }
 
+  removeProductById(id){
+    for( let i = 0; i < this.products.length; i++){
+      if(this.products[i].id == id){
+        this.products.splice(i, 1);
+        return true;
+      }
+    }
+    return false;
+  }
+
   findProductsByNameLike(subString) {
     const matches = this.products.filter(function(product) {
       const position = product.name.search(subString)
